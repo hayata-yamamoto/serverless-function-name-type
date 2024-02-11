@@ -20,11 +20,11 @@ functions:
     handler: path.to.handler
     timeout: 30
     description: "handler description"
-  sample-handler2:
+  sampleHandler2:
     handler: path.to.handler
     timeout: 30
     description: "handler description 2"
-  sample-event-handler:
+  sample_event_handler:
     handler: path.to.handler
     timeout: 900
     memorySize: 512
