@@ -1,2 +1,7 @@
 /node_modules
 tsconfig.json
+main.ts
+.husky/
+tests/
+.github/
+.eslintrc.js
