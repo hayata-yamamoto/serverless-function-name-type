@@ -9,7 +9,7 @@
     "prepare": "npm run build && husky install",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format:lint": "eslint --fix --ext .ts src",
-    "format:prettier": "prettier --write \"src/**/*.ts\" --write test-script.ts --write .eslintrc.js",
+    "format:prettier": "prettier --write \"src/**/*.ts\" --write .eslintrc.js",
     "format": "run-s format:prettier format:lint",
     "lint": "eslint --fix --ext .ts src"
   },
