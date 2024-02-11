@@ -1,6 +1,6 @@
 {
   "name": "@hayata-yamamoto/serverless-function-name-type",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
@@ -10,8 +10,7 @@
     "format:lint": "eslint --fix --ext .ts main.ts",
     "format:prettier": "prettier --write main.ts --write .eslintrc.js",
     "format": "run-s format:prettier format:lint",
-    "lint": "eslint --fix --ext .ts src",
-    "_test": "generate-func-type"
+    "lint": "eslint --fix --ext .ts src"
   },
   "author": "hayata-yamamoto",
   "license": "MIT",

@@ -3,7 +3,7 @@ import { load } from 'js-yaml'
 import { readFileSync, writeFileSync } from 'fs'
 import nunjucks from 'nunjucks'
 
-const version = '0.2.0'
+const version = '0.3.0'
 
 const languages = {
   typescript: 'typescript',
