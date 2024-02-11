@@ -1,9 +1,11 @@
+#!/usr/bin/env node
+
 import { Command, Argument } from '@commander-js/extra-typings'
 import { load } from 'js-yaml'
 import { readFileSync, writeFileSync } from 'fs'
 import nunjucks from 'nunjucks'
 
-const version = '0.3.0'
+const version = '0.3.1'
 
 const languages = {
   typescript: 'typescript',
