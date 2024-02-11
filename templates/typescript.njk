@@ -1,0 +1,6 @@
+const lambdaHandlers = {
+  {% for key, value in handlers %}
+  {{- key }}: '{{ value }}'
+  {% endfor %}
+}
+type LambdaHandler = keyof typeof lambdaHandlers

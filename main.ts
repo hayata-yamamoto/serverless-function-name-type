@@ -1,9 +1,9 @@
-import { Command, Argument } from 'commander'
+import { Command, Argument } from '@commander-js/extra-typings'
 import { load } from 'js-yaml'
 import { readFileSync, writeFileSync } from 'fs'
 import nunjucks from 'nunjucks'
 
-const version = '0.0.1'
+const version = '0.3.0'
 
 const languages = {
   typescript: 'typescript',
@@ -11,8 +11,8 @@ const languages = {
 }
 type Language = keyof typeof languages
 const languageTemplates = {
-  typescript: './templates/typescript-template.tmpl',
-  python: './templates/python-template.tmpl'
+  typescript: './templates/typescript.njk',
+  python: './templates/python.njk'
 }
 
 type EventType = {
@@ -62,6 +62,7 @@ const generateCode = (variables: GenerateCodeVariables): void => {
 
   switch (language) {
     case languages.typescript:
+      writeFileSync(outputFp, nunjucks.render(languageTemplates.typescript, { handlers }) as string)
       break
     case languages.python:
       writeFileSync(outputFp, nunjucks.render(languageTemplates.python, { handlers }) as string)
@@ -74,7 +75,7 @@ const generateCode = (variables: GenerateCodeVariables): void => {
 const program = new Command()
 program
   .version(version)
-  .command('generate')
+  .command('generate-handler-type')
   .argument('fp', 'serverless yaml file path')
   .addArgument(
     new Argument('<language>', 'language to generate').choices(
@@ -83,7 +84,7 @@ program
   )
   .requiredOption('-o, --output <output>', 'output directory')
   .option('-s, --stage <stage>', 'stage to generate', '')
-  .action((fp: string, language: Language, option) => {
-    generateCode({ fp, language, stage: option.stage, outputFp: option.output})
+  .action((fp: string, language, option) => {
+    generateCode({ fp, language: language as Language, stage: option.stage, outputFp: option.output})
   })
   .parse()
