@@ -37,7 +37,7 @@ jobs:
       - name: build docs
         run: |
           npm install
-          npx typedoc --plugin typedoc-plugin-markdown "src/**/*.ts"
+          npx typedoc --plugin typedoc-plugin-markdown "main.ts"
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
