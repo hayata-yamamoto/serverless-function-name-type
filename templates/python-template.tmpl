@@ -1,0 +1,7 @@
+from enum import Enum
+
+
+class LambdaHandlers(str, Enum):
+    {% for key, value in handlers %}
+    {{- key }} = "{{ value }}"
+    {% endfor %}
