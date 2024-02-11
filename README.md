@@ -1,2 +1,3 @@
 # serverless-function-name-type
-Serverless Framework made Lambda function name type generator 
+Lambda function name type generator for Serverless Framework
+
